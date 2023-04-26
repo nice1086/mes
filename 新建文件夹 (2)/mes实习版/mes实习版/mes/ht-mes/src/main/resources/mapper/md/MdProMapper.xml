@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.md.mapper.MdProMapper">
+
+    <select id="selectMdProByParent" parameterType="String" resultMap="MdPro">
+       select ancestors,item_type_name,order_num,enable_flag from md_item_type where item_type_name = #{parent}
+    </select>
+
+    <insert id="insertMdPro" parameterType="MdPro">
+        insert into md_item_type
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ancestors != null and ancestors != ''">ancestors,</if>
+            <if test="item_type_name != null and item_type_name != ''">item_type_name,</if>
+            <if test="order_num != null and order_num != ''">order_num,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteMdProByParent" parameterType="String">
+        delete from md_item_type where item_type_name = #{parent}
+    </delete>
+
+    <update id="updateMdPro" parameterType="MdPro">
+        update md_item_type
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="ancestors != null and ancestors != ''">ancestors,</if>
+            <if test="item_type_name != null and item_type_name != ''">item_type_name,</if>
+            <if test="order_num != null and order_num != ''">order_num,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+        </trim>
+    </update>
+</mapper>
