@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.md.mapper.MdProManagerMapper">
+
+    <select id="selectMdProByitemcode" parameterType="String" resultMap="MdProManager">
+       select item_code,item_name,item_spc,unit_of_measure,item_or_product from pro_workorder_bom where item_code = #{item_code}
+    </select>
+
+    <insert id="insertMdProManager" parameterType="MdProManager">
+        insert into pro_workorder_bom
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="item_code != null and item_code != ''">item_code,</if>
+            <if test="item_name != null and item_name != ''">item_name,</if>
+            <if test="item_spc != null and item_spc != ''">item_spc,</if>
+            <if test="unit_of_measure != null and unit_of_measure != ''">unit_of_measure,</if>
+            <if test="item_or_product != null and item_or_product != ''">item_or_product,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteMdProByitemcode" parameterType="String">
+        delete from pro_workorder_bom where item_code = #{item_code}
+    </delete>
+
+    <update id="updateMdProManager" parameterType="MdProManager">
+        update md_item_type
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="item_code != null and item_code != ''">item_code,</if>
+            <if test="item_name != null and item_name != ''">item_name,</if>
+            <if test="item_spc != null and item_spc != ''">item_spc,</if>
+            <if test="unit_of_measure != null and unit_of_measure != ''">unit_of_measure,</if>
+            <if test="item_or_product != null and item_or_product != ''">item_or_product,</if>
+        </trim>
+    </update>
+
+</mapper>
