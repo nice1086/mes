@@ -20,7 +20,7 @@ public class MdProManagerController {
     /**
      * 新增产品
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:promanager:add')")
+    @PreAuthorize("@ss.hasPermi('mes:md:proManager:add')")
     @Log(title = "物料编码", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody MdProManager mdProManager) {
@@ -29,7 +29,7 @@ public class MdProManagerController {
     /**
      * 查看产品
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:promanager:list')")
+    @PreAuthorize("@ss.hasPermi('mes:md:proManager:list')")
     @GetMapping("/list")
     public MdPro select(@Validated @RequestParam String item_code)
     {
@@ -39,7 +39,7 @@ public class MdProManagerController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:promanager:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:md:proManager:edit')")
     @Log(title = "物料编码", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody MdProManager mdProManager)
@@ -50,7 +50,7 @@ public class MdProManagerController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:promanager:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:md:proManager:remove')")
     @Log(title = "物料编码", businessType = BusinessType.DELETE)
     @DeleteMapping("/{item_code}")
     public int remove(@PathVariable String item_code)

@@ -28,6 +28,7 @@ public class MdProManager extends MdPro{
     @Excel(name = "物料/产品")
     private String item_or_product;
 
+
     public String getItem_code() {
         return item_code;
     }
