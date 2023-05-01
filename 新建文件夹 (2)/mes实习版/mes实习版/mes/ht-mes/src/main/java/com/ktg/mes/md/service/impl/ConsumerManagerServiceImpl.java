@@ -20,8 +20,8 @@ public class ConsumerManagerServiceImpl implements ConsumerManagerService {
     }
 
     @Override
-    public int deleteMdProByclientcode(String client_code) {
-        return consumerManagerMapper.deleteMdProByclientcode(client_code);
+    public int deleteConsumerByclientcode(String client_code) {
+        return consumerManagerMapper.deleteConsumerByclientcode(client_code);
     }
 
     @Override

@@ -59,6 +59,6 @@ public class ConsumerManagerController {
     @DeleteMapping("/{client_code}")
     public int remove(@PathVariable String client_code)
     {
-        return consumerManagerService.deleteMdProByclientcode(client_code);
+        return consumerManagerService.deleteConsumerByclientcode(client_code);
     }
 }

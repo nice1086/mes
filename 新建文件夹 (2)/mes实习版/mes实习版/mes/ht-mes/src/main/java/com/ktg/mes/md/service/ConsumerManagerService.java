@@ -7,7 +7,7 @@ public interface ConsumerManagerService {
 
     ConsumerManager selectConsumerByclientcode(String client_code);
 
-    int deleteMdProByclientcode(String client_code);
+    int deleteConsumerByclientcode(String client_code);
 
     int updateConsumerManager(ConsumerManager consumerManager);
 }

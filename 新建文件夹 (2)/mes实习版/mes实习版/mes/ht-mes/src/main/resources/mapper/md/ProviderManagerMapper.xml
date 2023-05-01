@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.md.mapper.ProviderManagerMapper">
+
+    <select id="selectProviderByvendorcode" parameterType="String" resultMap="ProviderManager">
+       select vendor_code,vendor_name,vendor_nick,vendor_en,vendor_des,vendor_logo,vendor_level,vendor_score,
+        address,website,email,tel,contact1,contact1_tel,contact1_email,contact2,contact2_tel,contact2_email,
+        credit_code,enable_flag,remark,attr1,attr2,attr3,attr4,create_by,create_time,update_by,update_time
+        from md_vendor where vendor_code = #{vendor_code}
+    </select>
+
+    <insert id="insertProviderManager" parameterType="ProviderManager">
+        insert into md_vendor
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="vendor_code != null and vendor_code != ''">vendor_code,</if>
+            <if test="vendor_name != null and vendor_name != ''">vendor_name,</if>
+            <if test="vendor_nick != null and vendor_nick != ''">vendor_nick,</if>
+            <if test="vendor_en != null and vendor_en != ''">vendor_en,</if>
+            <if test="vendor_des != null and vendor_des != ''">vendor_des,</if>
+            <if test="vendor_logo != null and vendor_logo != ''">vendor_logo,</if>
+            <if test="vendor_level != null and vendor_level != ''">vendor_level,</if>
+            <if test="vendor_score != null and vendor_score != ''">vendor_score,</if>
+            <if test="address != null and address != ''">address,</if>
+            <if test="website != null and website != ''">website,</if>
+            <if test="email != null and email != ''">email,</if>
+            <if test="tel != null and tel != ''">tel,</if>
+            <if test="contact1 != null and contact1 != ''">contact1,</if>
+            <if test="contact1_tel != null and contact1_tel != ''">contact1_tel,</if>
+            <if test="contact1_email != null and contact1_email != ''">contact1_email,</if>
+            <if test="contact2 != null and contact2 != ''">contact2,</if>
+            <if test="contact2_tel != null and contact2_tel != ''">contact2_tel,</if>
+            <if test="contact2_email != null and contact2_email != ''">contact2_email,</if>
+            <if test="credit_code != null and credit_code != ''">credit_code,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteProviderByvendorcode" parameterType="String">
+        delete from md_vendor where vendor_code = #{vendor_code}
+    </delete>
+
+    <update id="updateProviderManager" parameterType="ProviderManager">
+        update md_vendor
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="vendor_code != null and vendor_code != ''">vendor_code,</if>
+            <if test="vendor_name != null and vendor_name != ''">vendor_name,</if>
+            <if test="vendor_nick != null and vendor_nick != ''">vendor_nick,</if>
+            <if test="vendor_en != null and vendor_en != ''">vendor_en,</if>
+            <if test="vendor_des != null and vendor_des != ''">vendor_des,</if>
+            <if test="vendor_logo != null and vendor_logo != ''">vendor_logo,</if>
+            <if test="vendor_level != null and vendor_level != ''">vendor_level,</if>
+            <if test="vendor_score != null and vendor_score != ''">vendor_score,</if>
+            <if test="address != null and address != ''">address,</if>
+            <if test="website != null and website != ''">website,</if>
+            <if test="email != null and email != ''">email,</if>
+            <if test="tel != null and tel != ''">tel,</if>
+            <if test="contact1 != null and contact1 != ''">contact1,</if>
+            <if test="contact1_tel != null and contact1_tel != ''">contact1_tel,</if>
+            <if test="contact1_email != null and contact1_email != ''">contact1_email,</if>
+            <if test="contact2 != null and contact2 != ''">contact2,</if>
+            <if test="contact2_tel != null and contact2_tel != ''">contact2_tel,</if>
+            <if test="contact2_email != null and contact2_email != ''">contact2_email,</if>
+            <if test="credit_code != null and credit_code != ''">credit_code,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+
+</mapper>
