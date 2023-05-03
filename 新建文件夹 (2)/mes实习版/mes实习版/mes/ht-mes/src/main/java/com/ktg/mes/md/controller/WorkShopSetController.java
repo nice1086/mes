@@ -40,7 +40,7 @@ public class WorkShopSetController {
      * 修改
      */
     @PreAuthorize("@ss.hasPermi('mes:md:workShopSet:edit')")
-    @Log(title = "客户编码", businessType = BusinessType.UPDATE)
+    @Log(title = "车间编码", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody WorkShopSet workShopSet)
     {

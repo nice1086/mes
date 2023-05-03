@@ -65,4 +65,135 @@ public class WorkShopSet {
     @Excel(name = "更新时间")
     private Date update_time;
 
+    public String getWorkshop_code() {
+        return workshop_code;
+    }
+
+    public void setWorkshop_code(String workshop_code) {
+        this.workshop_code = workshop_code;
+    }
+
+    public String getWorkshop_name() {
+        return workshop_name;
+    }
+
+    public void setWorkshop_name(String workshop_name) {
+        this.workshop_name = workshop_name;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getCharge() {
+        return charge;
+    }
+
+    public void setCharge(String charge) {
+        this.charge = charge;
+    }
+
+    public String getEnable_flag() {
+        return enable_flag;
+    }
+
+    public void setEnable_flag(String enable_flag) {
+        this.enable_flag = enable_flag;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getAttr1() {
+        return attr1;
+    }
+
+    public void setAttr1(String attr1) {
+        this.attr1 = attr1;
+    }
+
+    public String getAttr2() {
+        return attr2;
+    }
+
+    public void setAttr2(String attr2) {
+        this.attr2 = attr2;
+    }
+
+    public Integer getAttr3() {
+        return attr3;
+    }
+
+    public void setAttr3(Integer attr3) {
+        this.attr3 = attr3;
+    }
+
+    public Integer getAttr4() {
+        return attr4;
+    }
+
+    public void setAttr4(Integer attr4) {
+        this.attr4 = attr4;
+    }
+
+    public String getCreate_by() {
+        return create_by;
+    }
+
+    public void setCreate_by(String create_by) {
+        this.create_by = create_by;
+    }
+
+    public Date getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getUpdate_by() {
+        return update_by;
+    }
+
+    public void setUpdate_by(String update_by) {
+        this.update_by = update_by;
+    }
+
+    public Date getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(Date update_time) {
+        this.update_time = update_time;
+    }
+
+    @Override
+    public String toString() {
+        return "WorkShopSet{" +
+                "workshop_code='" + workshop_code + '\'' +
+                ", workshop_name='" + workshop_name + '\'' +
+                ", area='" + area + '\'' +
+                ", charge='" + charge + '\'' +
+                ", enable_flag='" + enable_flag + '\'' +
+                ", remark='" + remark + '\'' +
+                ", attr1='" + attr1 + '\'' +
+                ", attr2='" + attr2 + '\'' +
+                ", attr3=" + attr3 +
+                ", attr4=" + attr4 +
+                ", create_by='" + create_by + '\'' +
+                ", create_time=" + create_time +
+                ", update_by='" + update_by + '\'' +
+                ", update_time=" + update_time +
+                '}';
+    }
 }

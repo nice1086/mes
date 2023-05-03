@@ -3,19 +3,36 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ktg.mes.md.mapper.WorkShopSetMapper">
-    <select id="selectWorkShopSetByworkshopcode" parameterType="String" resultMap="WorkShopSet">
-       select workshop_code,workshop_name,area,charge,enable_flag,
-       remark,attr1,attr2,attr3,attr4,create_by,create_time,update_by,update_time
-        from md_workshop where workshop_code = #{workshop_code}
+    <select id="selectWorkStationByworkstationcode" parameterType="String" resultMap="WorkStation">
+       select workstation_code,workstation_name,workstation_address,workshop_id,
+           workshop_code,workshop_name,process_id,process_code,process_name,warehouse_id,
+           warehouse_code,warehouse_name,location_id,location_code,location_name,area_id,
+           area_code,area_name,enable_flag,remark,attr1,attr2,attr3,attr4,create_by,
+           create_time,update_by,update_time
+       from md_workstation where workstation_code = #{workstation_code}
     </select>
 
-    <insert id="insertWorkShopSet" parameterType="WorkShopSet">
-        insert into md_workshop
+    <insert id="insertWorkStation" parameterType="WorkStation">
+        insert into md_workstation
         <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="workstation_code != null and workstation_code != ''">workstation_code,</if>
+            <if test="workstation_name != null and workstation_name != ''">workstation_name,</if>
+            <if test="workstation_address != null and workstation_address != ''">workstation_address,</if>
+            <if test="workshop_id != null and workshop_id != ''">workshop_id,</if>
             <if test="workshop_code != null and workshop_code != ''">workshop_code,</if>
             <if test="workshop_name != null and workshop_name != ''">workshop_name,</if>
-            <if test="area != null and area != ''">area,</if>
-            <if test="charge != null and charge != ''">charge,</if>
+            <if test="process_id != null and process_id != ''">process_id,</if>
+            <if test="process_code != null and process_code != ''">process_code,</if>
+            <if test="process_name != null and process_name != ''">process_name,</if>
+            <if test="warehouse_id != null and warehouse_id != ''">warehouse_id,</if>
+            <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
+            <if test="warehouse_name != null and warehouse_name != ''">warehouse_name,</if>
+            <if test="location_id != null and location_id != ''">location_id,</if>
+            <if test="location_code != null and location_code != ''">location_code,</if>
+            <if test="location_name != null and location_name != ''">location_name,</if>
+            <if test="area_id != null and area_id != ''">area_id,</if>
+            <if test="area_code != null and area_code != ''">area_code,</if>
+            <if test="area_name != null and area_name != ''">area_name,</if>
             <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
             <if test="remark != null and remark != ''">remark,</if>
             <if test="attr1 != null and attr1 != ''">attr1,</if>
@@ -29,17 +46,31 @@
         </trim>
     </insert>
 
-    <delete id="deleteWorkShopSetByworkshopcode" parameterType="String">
-        delete from md_workshop where workshop_code = #{workshop_code}
+    <delete id="deleteWorkStationByworkstationcode" parameterType="String">
+        delete from md_workstation where workstation_code = #{workstation_code}
     </delete>
 
-    <update id="updateWorkShopSet" parameterType="WorkShopSet">
-        update md_workshop
+    <update id="updateWorkStation" parameterType="WorkShopSet">
+        update md_workstation
         <trim prefix="SET" suffixOverrides=",">
+            <if test="workstation_code != null and workstation_code != ''">workstation_code,</if>
+            <if test="workstation_name != null and workstation_name != ''">workstation_name,</if>
+            <if test="workstation_address != null and workstation_address != ''">workstation_address,</if>
+            <if test="workshop_id != null and workshop_id != ''">workshop_id,</if>
             <if test="workshop_code != null and workshop_code != ''">workshop_code,</if>
             <if test="workshop_name != null and workshop_name != ''">workshop_name,</if>
-            <if test="area != null and area != ''">area,</if>
-            <if test="charge != null and charge != ''">charge,</if>
+            <if test="process_id != null and process_id != ''">process_id,</if>
+            <if test="process_code != null and process_code != ''">process_code,</if>
+            <if test="process_name != null and process_name != ''">process_name,</if>
+            <if test="warehouse_id != null and warehouse_id != ''">warehouse_id,</if>
+            <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
+            <if test="warehouse_name != null and warehouse_name != ''">warehouse_name,</if>
+            <if test="location_id != null and location_id != ''">location_id,</if>
+            <if test="location_code != null and location_code != ''">location_code,</if>
+            <if test="location_name != null and location_name != ''">location_name,</if>
+            <if test="area_id != null and area_id != ''">area_id,</if>
+            <if test="area_code != null and area_code != ''">area_code,</if>
+            <if test="area_name != null and area_name != ''">area_name,</if>
             <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
             <if test="remark != null and remark != ''">remark,</if>
             <if test="attr1 != null and attr1 != ''">attr1,</if>
