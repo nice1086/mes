@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.wm.mapper.WareHouseMapper">
+    <select id="selectWareHouseBywarehousecode" parameterType="String" resultMap="WareHouse">
+       select warehouse_code,warehouse_name,location,area,
+           charge,enable_flag,remark,attr1,attr2,attr3,
+           attr4,create_by,create_time,update_by,update_time
+       from wm_warehouse where warehouse_code = #{warehouse_code}
+    </select>
+
+    <insert id="insertWareHouse" parameterType="WareHouse">
+        insert into wm_warehouse
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
+            <if test="warehouse_name != null and warehouse_name != ''">warehouse_name,</if>
+            <if test="location != null and location != ''">location,</if>
+            <if test="area != null and area != ''">area,</if>
+            <if test="charge != null and charge != ''">charge,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteWareHouseBywarehousecode" parameterType="String">
+        delete from wm_warehouse where warehouse_code = #{warehouse_code}
+    </delete>
+
+    <update id="updateWareHouse" parameterType="WareHouse">
+        update wm_warehouse
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
+            <if test="warehouse_name != null and warehouse_name != ''">warehouse_name,</if>
+            <if test="location != null and location != ''">location,</if>
+            <if test="area != null and area != ''">area,</if>
+            <if test="charge != null and charge != ''">charge,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
