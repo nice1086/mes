@@ -27,6 +27,6 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public int deleteIssueByissuecode(String issue_code) {
-        return issueMapper.c(issue_code);
+        return issueMapper.deleteIssueByissuecode(issue_code);
     }
 }
