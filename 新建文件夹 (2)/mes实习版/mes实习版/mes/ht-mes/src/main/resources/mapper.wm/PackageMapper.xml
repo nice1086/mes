@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.wm.mapper.PackageMapper">
+    <select id="selectPackageBypackagecode" parameterType="String" resultMap="Package">
+       select parent_id,ancestors,package_code,barcode_id,barcode_content,
+           barcode_url,package_date,so_code,invoice_code,client_id,client_code,client_name,
+           client_nick,package_length,package_width,package_height,size_unit,net_weight,
+           cross_weight,weight_unit,inspector,inspector_name,status,enable_flag,remark,attr1,attr2,attr3,
+           attr4,create_by,create_time,update_by,update_time
+       from wm_package where package_code = #{package_code}
+    </select>
+
+    <insert id="insertPackage" parameterType="Package">
+        insert into wm_package
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="parent_id != null and parent_id != ''">parent_id,</if>
+            <if test="ancestors != null and ancestors != ''">ancestors,</if>
+            <if test="package_code != null and package_code != ''">package_code,</if>
+            <if test="barcode_id != null and barcode_id != ''">barcode_id,</if>
+            <if test="barcode_content != null and barcode_content != ''">barcode_content,</if>
+            <if test="barcode_url != null and barcode_url != ''">barcode_url,</if>
+            <if test="package_date != null and package_date != ''">package_date,</if>
+            <if test="so_code != null and so_code != ''">so_code,</if>
+            <if test="invoice_code != null and invoice_code != ''">invoice_code,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_code != null and client_code != ''">client_code,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="client_nick != null and client_nick != ''">client_nick,</if>
+            <if test="package_length != null and package_length != ''">package_length,</if>
+            <if test="package_width != null and package_width != ''">package_width,</if>
+            <if test="package_height != null and package_height != ''">package_height,</if>
+            <if test="size_unit != null and size_unit != ''">size_unit,</if>
+            <if test="net_weight != null and net_weight != ''">net_weight,</if>
+            <if test="cross_weight != null and cross_weight != ''">cross_weight,</if>
+            <if test="weight_unit != null and weight_unit != ''">weight_unit,</if>
+            <if test="inspector != null and inspector != ''">inspector,</if>
+            <if test="inspector_name != null and inspector_name != ''">inspector_name,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deletePackageBypackagecode" parameterType="String">
+        delete from wm_package where package_code = #{package_code}
+    </delete>
+
+    <update id="updatePackage" parameterType="Package">
+        update wm_package
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="parent_id != null and parent_id != ''">parent_id,</if>
+            <if test="ancestors != null and ancestors != ''">ancestors,</if>
+            <if test="package_code != null and package_code != ''">package_code,</if>
+            <if test="barcode_id != null and barcode_id != ''">barcode_id,</if>
+            <if test="barcode_content != null and barcode_content != ''">barcode_content,</if>
+            <if test="barcode_url != null and barcode_url != ''">barcode_url,</if>
+            <if test="package_date != null and package_date != ''">package_date,</if>
+            <if test="so_code != null and so_code != ''">so_code,</if>
+            <if test="invoice_code != null and invoice_code != ''">invoice_code,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_code != null and client_code != ''">client_code,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="client_nick != null and client_nick != ''">client_nick,</if>
+            <if test="package_length != null and package_length != ''">package_length,</if>
+            <if test="package_width != null and package_width != ''">package_width,</if>
+            <if test="package_height != null and package_height != ''">package_height,</if>
+            <if test="size_unit != null and size_unit != ''">size_unit,</if>
+            <if test="net_weight != null and net_weight != ''">net_weight,</if>
+            <if test="cross_weight != null and cross_weight != ''">cross_weight,</if>
+            <if test="weight_unit != null and weight_unit != ''">weight_unit,</if>
+            <if test="inspector != null and inspector != ''">inspector,</if>
+            <if test="inspector_name != null and inspector_name != ''">inspector_name,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
