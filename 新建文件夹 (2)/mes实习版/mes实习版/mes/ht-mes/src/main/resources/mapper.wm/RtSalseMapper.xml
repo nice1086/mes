@@ -2,23 +2,25 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ktg.mes.wm.mapper.RtIssueMapper">
-    <select id="selectRtIssueByrtcode" parameterType="String" resultMap="RtIssue">
-       select rt_code,rt_name,workorder_id,workorder_code,warehouse_id,
+<mapper namespace="com.ktg.mes.wm.mapper.RtSalseMapper">
+    <select id="selectRtSalseByrtcode" parameterType="String" resultMap="RtSalse">
+       select rt_code,rt_name,so_code,client_id,client_name,client_nick,warehouse_id,
               warehouse_code,warehouse_name,location_id,location_code,
-              location_name,area_id,area_code,area_name,rt_date,
+              location_name,area_id,area_code,area_name,rt_date,rt_reason
               status,remark,attr1,attr2,attr3,attr4,create_by,create_time,
               update_by,update_time
-       from wm_rt_issue where rt_code = #{rt_code}
+       from wm_rt_salse where rt_code = #{rt_code}
     </select>
 
-    <insert id="insertRtIssue" parameterType="RtIssue">
-        insert into wm_rt_issue
+    <insert id="insertRtSalse" parameterType="RtSalse">
+        insert into wm_rt_salse
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="rt_code != null and rt_code != ''">rt_code,</if>
             <if test="rt_name != null and rt_name != ''">rt_name,</if>
-            <if test="workorder_id != null and workorder_id != ''">workorder_id,</if>
-            <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
+            <if test="so_code != null and so_code != ''">so_code,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="client_nick != null and client_nick != ''">client_nick,</if>
             <if test="warehouse_id != null and warehouse_id != ''">warehouse_id,</if>
             <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
             <if test="warehouse_name != null and warehouse_name != ''">warehouse_name,</if>
@@ -29,6 +31,7 @@
             <if test="area_code != null and area_code != ''">area_code,</if>
             <if test="area_name != null and area_name != ''">area_name,</if>
             <if test="rt_date != null and rt_date != ''">rt_date,</if>
+            <if test="rt_reason != null and rt_reason != ''">rt_reason,</if>
             <if test="status != null and status != ''">status,</if>
             <if test="remark != null and remark != ''">remark,</if>
             <if test="attr1 != null and attr1 != ''">attr1,</if>
@@ -42,17 +45,19 @@
         </trim>
     </insert>
 
-    <delete id="updateRtIssue" parameterType="String">
-        delete from wm_rt_issue where rt_code = #{rt_code}
+    <delete id="updateRtSalse" parameterType="String">
+        delete from wm_rt_salse where rt_code = #{rt_code}
     </delete>
 
-    <update id="deleteRtIssueByrtcode" parameterType="RtIssue">
-        update wm_rt_issue
+    <update id="deleteRtIssueByrtcode" parameterType="RtSalse">
+        update wm_rt_salse
         <trim prefix="SET" suffixOverrides=",">
             <if test="rt_code != null and rt_code != ''">rt_code,</if>
             <if test="rt_name != null and rt_name != ''">rt_name,</if>
-            <if test="workorder_id != null and workorder_id != ''">enable_flag,</if>
-            <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
+            <if test="so_code != null and so_code != ''">so_code,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="client_nick != null and client_nick != ''">client_nick,</if>
             <if test="warehouse_id != null and warehouse_id != ''">warehouse_id,</if>
             <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
             <if test="warehouse_name != null and warehouse_name != ''">warehouse_name,</if>
@@ -63,6 +68,7 @@
             <if test="area_code != null and area_code != ''">area_code,</if>
             <if test="area_name != null and area_name != ''">area_name,</if>
             <if test="rt_date != null and rt_date != ''">rt_date,</if>
+            <if test="rt_reason != null and rt_reason != ''">rt_reason,</if>
             <if test="status != null and status != ''">status,</if>
             <if test="remark != null and remark != ''">remark,</if>
             <if test="attr1 != null and attr1 != ''">attr1,</if>
