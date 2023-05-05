@@ -42,7 +42,7 @@ public class RtVendorController {
      * 修改
      */
     @PreAuthorize("@ss.hasPermi('mes:md:rtVendor:edit')")
-    @Log(title = "仓库编号", businessType = BusinessType.UPDATE)
+    @Log(title = "退货单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody RtVendor rtVendor)
     {

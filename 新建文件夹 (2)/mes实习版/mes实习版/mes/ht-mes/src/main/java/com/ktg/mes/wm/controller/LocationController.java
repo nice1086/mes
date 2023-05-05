@@ -42,7 +42,7 @@ public class LocationController {
      * 修改
      */
     @PreAuthorize("@ss.hasPermi('mes:md:location:edit')")
-    @Log(title = "仓库编号", businessType = BusinessType.UPDATE)
+    @Log(title = "入库编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Location location)
     {

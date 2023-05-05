@@ -21,7 +21,7 @@ public class IssueController {
      * 新增
      */
     @PreAuthorize("@ss.hasPermi('mes:md:issue:add')")
-    @Log(title = "退货单编号", businessType = BusinessType.INSERT)
+    @Log(title = "领料单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Issue issue) {
 
@@ -42,7 +42,7 @@ public class IssueController {
      * 修改
      */
     @PreAuthorize("@ss.hasPermi('mes:md:issue:edit')")
-    @Log(title = "仓库编号", businessType = BusinessType.UPDATE)
+    @Log(title = "领料单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Issue issue)
     {
@@ -54,7 +54,7 @@ public class IssueController {
      * 删除
      */
     @PreAuthorize("@ss.hasPermi('mes:md:issue:remove')")
-    @Log(title = "退货单编号", businessType = BusinessType.DELETE)
+    @Log(title = "领料单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{issue_code}")
     public int remove(@PathVariable String issue_code)
     {
