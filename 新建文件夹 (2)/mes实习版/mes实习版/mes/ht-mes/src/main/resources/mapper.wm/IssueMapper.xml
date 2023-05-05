@@ -20,7 +20,7 @@
             <if test="workstation_id != null and workstation_id != ''">workstation_id,</if>
             <if test="workstation_code != null and workstation_code != ''">workstation_code,</if>
             <if test="workstation_name != null and workstation_name != ''">workstation_name,</if>
-            <if test="workorder_id != null and workorder_idworkorder_id != ''">enable_flag,</if>
+            <if test="workorder_id != null and workorder_id != ''">enable_flag,</if>
             <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
             <if test="task_id != null and task_id != ''">task_id,</if>
             <if test="task_code != null and task_code != ''">task_code,</if>
@@ -63,7 +63,7 @@
             <if test="workstation_id != null and workstation_id != ''">workstation_id,</if>
             <if test="workstation_code != null and workstation_code != ''">workstation_code,</if>
             <if test="workstation_name != null and workstation_name != ''">workstation_name,</if>
-            <if test="workorder_id != null and workorder_idworkorder_id != ''">enable_flag,</if>
+            <if test="workorder_id != null and workorder_id != ''">enable_flag,</if>
             <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
             <if test="task_id != null and task_id != ''">task_id,</if>
             <if test="task_code != null and task_code != ''">task_code,</if>

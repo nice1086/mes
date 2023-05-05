@@ -17,7 +17,7 @@
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="rt_code != null and rt_code != ''">rt_code,</if>
             <if test="rt_name != null and rt_name != ''">rt_name,</if>
-            <if test="workorder_id != null and workorder_idworkorder_id != ''">enable_flag,</if>
+            <if test="workorder_id != null and workorder_id != ''">enable_flag,</if>
             <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
             <if test="warehouse_id != null and warehouse_id != ''">warehouse_id,</if>
             <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
@@ -51,7 +51,7 @@
         <trim prefix="SET" suffixOverrides=",">
             <if test="rt_code != null and rt_code != ''">rt_code,</if>
             <if test="rt_name != null and rt_name != ''">rt_name,</if>
-            <if test="workorder_id != null and workorder_idworkorder_id != ''">enable_flag,</if>
+            <if test="workorder_id != null and workorder_id != ''">enable_flag,</if>
             <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
             <if test="warehouse_id != null and warehouse_id != ''">warehouse_id,</if>
             <if test="warehouse_code != null and warehouse_code != ''">warehouse_code,</if>
