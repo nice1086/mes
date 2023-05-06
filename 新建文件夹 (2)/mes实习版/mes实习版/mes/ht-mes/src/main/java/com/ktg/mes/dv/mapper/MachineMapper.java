@@ -4,7 +4,7 @@ import com.ktg.mes.dv.domain.Machine;
 import com.ktg.mes.wm.domain.Issue;
 
 public interface MachineMapper {
-    int insertMachine(Issue issue);
+    int insertMachine(Machine machine);
 
     Machine selectMachineBymachinerytypecode(String machinery_type_code);
 

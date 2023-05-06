@@ -2,20 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ktg.mes.dv.mapper.MachineMapper">
-    <select id="selectMachineBymachinerytypecode" parameterType="String" resultMap="Machine">
-       select machinery_type_code,machinery_type_name,parent_type_id,ancestors,enable_flag,
+<mapper namespace="com.ktg.mes.dv.mapper.SubjectMapper">
+    <select id="selectSubjectBysubjectcode" parameterType="String" resultMap="Subject">
+       select subject_code,subject_name,subject_type,subject_content,subject_standard,enable_flag,
               remark,attr1,attr2,attr3,attr4,create_by,create_time,update_by,update_time
-       from dv_machinery_type where machinery_type_code = #{machinery_type_code}
+       from dv_subject where subject_code = #{subject_code}
     </select>
 
-    <insert id="insertMachine" parameterType="Machine">
-        insert into dv_machinery_type
+    <insert id="insertSubject" parameterType="Subject">
+        insert into dv_subject
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="machinery_type_code != null and machinery_type_code != ''">machinery_type_code,</if>
-            <if test="machinery_type_name != null and machinery_type_name != ''">machinery_type_name,</if>
-            <if test="parent_type_id != null and parent_type_id != ''">parent_type_id,</if>
-            <if test="ancestors != null and ancestors != ''">ancestors,</if>
+            <if test="subject_code != null and subject_code != ''">subject_code,</if>
+            <if test="subject_name != null and subject_name != ''">subject_name,</if>
+            <if test="subject_type != null and subject_type != ''">subject_type,</if>
+            <if test="subject_content != null and subject_content != ''">subject_content,</if>
+            <if test="subject_standard != null and subject_standard != ''">subject_standard,</if>
             <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
             <if test="remark != null and remark != ''">remark,</if>
             <if test="attr1 != null and attr1 != ''">attr1,</if>
@@ -29,17 +30,18 @@
         </trim>
     </insert>
 
-    <delete id="deleteMachineBymachinerytypecode" parameterType="String">
-        delete from dv_machinery_type where machinery_type_code = #{machinery_type_code}
+    <delete id="deleteSubjectBysubjectcode" parameterType="String">
+        delete from dv_subject where subject_code = #{subject_code}
     </delete>
 
-    <update id="updateMachine" parameterType="Machine">
-        update dv_machinery_type
+    <update id="updateSubject" parameterType="Subject">
+        update dv_subject
         <trim prefix="SET" suffixOverrides=",">
-            <if test="machinery_type_code != null and machinery_type_code != ''">machinery_type_code,</if>
-            <if test="machinery_type_name != null and machinery_type_name != ''">machinery_type_name,</if>
-            <if test="parent_type_id != null and parent_type_id != ''">parent_type_id,</if>
-            <if test="ancestors != null and ancestors != ''">ancestors,</if>
+            <if test="subject_code != null and subject_code != ''">subject_code,</if>
+            <if test="subject_name != null and subject_name != ''">subject_name,</if>
+            <if test="subject_type != null and subject_type != ''">subject_type,</if>
+            <if test="subject_content != null and subject_content != ''">subject_content,</if>
+            <if test="subject_standard != null and subject_standard != ''">subject_standard,</if>
             <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
             <if test="remark != null and remark != ''">remark,</if>
             <if test="attr1 != null and attr1 != ''">attr1,</if>

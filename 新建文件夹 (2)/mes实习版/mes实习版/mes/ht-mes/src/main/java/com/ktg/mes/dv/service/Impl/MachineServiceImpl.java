@@ -12,8 +12,8 @@ public class MachineServiceImpl implements MachineService {
     private MachineMapper machineMapper;
 
     @Override
-    public int insertMachine(Issue issue) {
-        return machineMapper.insertMachine(issue);
+    public int insertMachine(Machine machine) {
+        return machineMapper.insertMachine(machine);
     }
 
     @Override

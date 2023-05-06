@@ -23,9 +23,9 @@ public class MachineController {
     @PreAuthorize("@ss.hasPermi('mes:md:machine:add')")
     @Log(title = "设备编号", businessType = BusinessType.INSERT)
     @PostMapping
-    public int add(@Validated @RequestBody Issue issue) {
+    public int add(@Validated @RequestBody Machine machine) {
 
-        return machineService.insertMachine(issue);
+        return machineService.insertMachine(machine);
     }
 
     /**

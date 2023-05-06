@@ -6,24 +6,28 @@ import javax.validation.constraints.NotBlank;
 import java.math.BigInteger;
 import java.util.Date;
 
-public class Machine {
-    /** 设备类型编码 */
-    @Excel(name = "设备类型编码")
-    @NotBlank(message = "设备类型编码不能为空")
-    private String machinery_type_code;
+public class Subject {
+    /** 项目编码 */
+    @Excel(name = "项目编码")
+    @NotBlank(message = "项目编码不能为空")
+    private String subject_code;
 
-    /** 设备类型名称 */
-    @Excel(name = "设备类型名称")
-    @NotBlank(message = "设备类型名称不能为空")
-    private String machinery_type_name;
+    /** 项目名称 */
+    @Excel(name = "项目名称")
+    @NotBlank(message = "项目名称不能为空")
+    private String subject_name;
 
-    /** 父类型ID */
-    @Excel(name = "父类型ID")
-    private BigInteger parent_type_id;
+    /** 项目类型 */
+    @Excel(name = "项目类型")
+    private String subject_type;
 
-    /** 所有父节点ID */
-    @Excel(name = "所有父节点ID")
-    private String ancestors;
+    /** 项目内容 */
+    @Excel(name = "项目内容")
+    private String subject_content;
+
+    /** 标准 */
+    @Excel(name = "标准")
+    private String subject_standard;
 
     /** 是否启用 */
     @Excel(name = "是否启用")
@@ -65,36 +69,44 @@ public class Machine {
     @Excel(name = "更新时间")
     private Date update_time;
 
-    public String getMachinery_type_code() {
-        return machinery_type_code;
+    public String getSubject_code() {
+        return subject_code;
     }
 
-    public void setMachinery_type_code(String machinery_type_code) {
-        this.machinery_type_code = machinery_type_code;
+    public void setSubject_code(String subject_code) {
+        this.subject_code = subject_code;
     }
 
-    public String getMachinery_type_name() {
-        return machinery_type_name;
+    public String getSubject_name() {
+        return subject_name;
     }
 
-    public void setMachinery_type_name(String machinery_type_name) {
-        this.machinery_type_name = machinery_type_name;
+    public void setSubject_name(String subject_name) {
+        this.subject_name = subject_name;
     }
 
-    public BigInteger getParent_type_id() {
-        return parent_type_id;
+    public String getSubject_type() {
+        return subject_type;
     }
 
-    public void setParent_type_id(BigInteger parent_type_id) {
-        this.parent_type_id = parent_type_id;
+    public void setSubject_type(String subject_type) {
+        this.subject_type = subject_type;
     }
 
-    public String getAncestors() {
-        return ancestors;
+    public String getSubject_content() {
+        return subject_content;
     }
 
-    public void setAncestors(String ancestors) {
-        this.ancestors = ancestors;
+    public void setSubject_content(String subject_content) {
+        this.subject_content = subject_content;
+    }
+
+    public String getSubject_standard() {
+        return subject_standard;
+    }
+
+    public void setSubject_standard(String subject_standard) {
+        this.subject_standard = subject_standard;
     }
 
     public String getEnable_flag() {
@@ -179,11 +191,12 @@ public class Machine {
 
     @Override
     public String toString() {
-        return "Machine{" +
-                "machinery_type_code='" + machinery_type_code + '\'' +
-                ", machinery_type_name='" + machinery_type_name + '\'' +
-                ", parent_type_id=" + parent_type_id +
-                ", ancestors='" + ancestors + '\'' +
+        return "Subject{" +
+                "subject_code='" + subject_code + '\'' +
+                ", subject_name='" + subject_name + '\'' +
+                ", subject_type='" + subject_type + '\'' +
+                ", subject_content='" + subject_content + '\'' +
+                ", subject_standard='" + subject_standard + '\'' +
                 ", enable_flag='" + enable_flag + '\'' +
                 ", remark='" + remark + '\'' +
                 ", attr1='" + attr1 + '\'' +
