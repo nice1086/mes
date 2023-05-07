@@ -22,7 +22,7 @@ public class SubjectController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:subject:add')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:subject:add')")
     @Log(title = "项目编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Subject subject) {
@@ -33,7 +33,7 @@ public class SubjectController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:subject:list')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:subject:list')")
     @GetMapping("/list")
     public Subject select(@Validated @RequestParam String subject_code)
     {
@@ -43,7 +43,7 @@ public class SubjectController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:subject:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:subject:edit')")
     @Log(title = "项目编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Subject subject)
@@ -54,7 +54,7 @@ public class SubjectController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:subject:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:subject:remove')")
     @Log(title = "项目编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{subject_code}")
     public int remove(@PathVariable String subject_code)

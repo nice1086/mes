@@ -20,7 +20,7 @@ public class MachineController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:machine:add')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:machine:add')")
     @Log(title = "设备编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Machine machine) {
@@ -31,7 +31,7 @@ public class MachineController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:machine:list')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:machine:list')")
     @GetMapping("/list")
     public Machine select(@Validated @RequestParam String machinery_type_code)
     {
@@ -41,7 +41,7 @@ public class MachineController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:machine:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:machine:edit')")
     @Log(title = "设备编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Machine machine)
@@ -52,7 +52,7 @@ public class MachineController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:machine:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:dv:machine:remove')")
     @Log(title = "设备编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{machinery_type_code}")
     public int remove(@PathVariable String machinery_type_code)

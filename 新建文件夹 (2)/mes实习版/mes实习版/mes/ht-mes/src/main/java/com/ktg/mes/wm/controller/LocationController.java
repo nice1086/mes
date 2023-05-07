@@ -20,7 +20,7 @@ public class LocationController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:location:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:location:add')")
     @Log(title = "入库编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Location location) {
@@ -31,7 +31,7 @@ public class LocationController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:location:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:location:list')")
     @GetMapping("/list")
     public Location select(@Validated @RequestParam String recpt_code)
     {
@@ -41,7 +41,7 @@ public class LocationController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:location:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:location:edit')")
     @Log(title = "入库编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Location location)
@@ -53,7 +53,7 @@ public class LocationController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:location:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:location:remove')")
     @Log(title = "入库编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{recpt_code}")
     public int remove(@PathVariable String recpt_code)

@@ -20,7 +20,7 @@ public class IssueController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:issue:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:issue:add')")
     @Log(title = "领料单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Issue issue) {
@@ -31,7 +31,7 @@ public class IssueController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:issue:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:issue:list')")
     @GetMapping("/list")
     public Issue select(@Validated @RequestParam String issue_code)
     {
@@ -41,7 +41,7 @@ public class IssueController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:issue:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:issue:edit')")
     @Log(title = "领料单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Issue issue)
@@ -53,7 +53,7 @@ public class IssueController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:issue:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:issue:remove')")
     @Log(title = "领料单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{issue_code}")
     public int remove(@PathVariable String issue_code)

@@ -20,7 +20,7 @@ public class SalseProduceController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:salseProduce:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:salseProduce:add')")
     @Log(title = "出库单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody SalseProduce salseProduce) {
@@ -31,7 +31,7 @@ public class SalseProduceController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:salseProduce:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:salseProduce:list')")
     @GetMapping("/list")
     public SalseProduce select(@Validated @RequestParam String salse_id)
     {
@@ -41,7 +41,7 @@ public class SalseProduceController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:salseProduce:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:salseProduce:edit')")
     @Log(title = "出库单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody SalseProduce salseProduce)
@@ -53,7 +53,7 @@ public class SalseProduceController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:salseProduce:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:salseProduce:remove')")
     @Log(title = "出库单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{salse_id}")
     public int remove(@PathVariable String salse_id)

@@ -20,7 +20,7 @@ public class RtVendorController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:rtVendor:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:rtVendor:add')")
     @Log(title = "退货单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody RtVendor rtVendor) {
@@ -31,7 +31,7 @@ public class RtVendorController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:rtVendor:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:rtVendor:list')")
     @GetMapping("/list")
     public RtVendor select(@Validated @RequestParam String rt_code)
     {
@@ -41,7 +41,7 @@ public class RtVendorController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:rtVendor:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:rtVendor:edit')")
     @Log(title = "退货单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody RtVendor rtVendor)
@@ -53,7 +53,7 @@ public class RtVendorController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:rtVendor:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:rtVendor:remove')")
     @Log(title = "退货单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{rt_code}")
     public int remove(@PathVariable String rt_code)

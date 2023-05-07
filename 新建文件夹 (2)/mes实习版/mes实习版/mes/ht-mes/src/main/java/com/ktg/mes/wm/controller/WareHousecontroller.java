@@ -20,7 +20,7 @@ public class WareHousecontroller {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:wareHouse:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:wareHouse:add')")
     @Log(title = "仓库编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody WareHouse wareHouse) {
@@ -30,7 +30,7 @@ public class WareHousecontroller {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:wareHouse:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:wareHouse:list')")
     @GetMapping("/list")
     public WareHouse select(@Validated @RequestParam String workstation_code)
     {
@@ -40,7 +40,7 @@ public class WareHousecontroller {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:wareHouse:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:wareHouse:edit')")
     @Log(title = "仓库编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody WareHouse wareHouse)
@@ -51,7 +51,7 @@ public class WareHousecontroller {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:wareHouse:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:wareHouse:remove')")
     @Log(title = "仓库编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{warehouse_code}")
     public int remove(@PathVariable String warehouse_code)

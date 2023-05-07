@@ -20,7 +20,7 @@ public class PrdProduceController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:prdProduce:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:prdProduce:add')")
     @Log(title = "入库单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Prdproduce prdproduce) {
@@ -31,7 +31,7 @@ public class PrdProduceController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:prdProduce:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:prdProduce:list')")
     @GetMapping("/list")
     public Prdproduce select(@Validated @RequestParam String workorder_code)
     {
@@ -41,7 +41,7 @@ public class PrdProduceController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:prdProduce:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:prdProduce:edit')")
     @Log(title = "入库单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Prdproduce prdproduce)
@@ -53,7 +53,7 @@ public class PrdProduceController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:prdProduce:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:prdProduce:remove')")
     @Log(title = "入库单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{workorder_code}")
     public int remove(@PathVariable String workorder_code)

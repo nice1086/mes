@@ -19,7 +19,7 @@ public class PackageContorller {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:package:add')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:package:add')")
     @Log(title = "装箱单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Package pacKage) {
@@ -30,7 +30,7 @@ public class PackageContorller {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:package:list')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:package:list')")
     @GetMapping("/list")
     public Package select(@Validated @RequestParam String package_code)
     {
@@ -40,7 +40,7 @@ public class PackageContorller {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:package:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:package:edit')")
     @Log(title = "装箱单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Package pacKage)
@@ -52,7 +52,7 @@ public class PackageContorller {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:md:package:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:wm:package:remove')")
     @Log(title = "装箱单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{package_code}")
     public int remove(@PathVariable String package_code)

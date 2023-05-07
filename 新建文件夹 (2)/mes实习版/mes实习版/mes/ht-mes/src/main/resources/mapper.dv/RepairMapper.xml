@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.dv.mapper.RepairMapper">
+    <select id="selectRepairByrepaircode" parameterType="String" resultMap="Repair">
+       select repair_code,repair_name,machinery_id,machinery_code,machinery_name,machinery_brand,
+              machinery_spec,machinery_type_id,require_date,finish_date,confirm_date,repair_result,
+              accepted_by,confirm_by,status,remark,attr1,attr2,attr3,attr4,create_by,create_time,
+              update_by,update_time
+       from dv_repair where repair_code = #{repair_code}
+    </select>
+
+    <insert id="insertRepair" parameterType="Repair">
+        insert into dv_repair
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="repair_code != null and repair_code != ''">repair_code,</if>
+            <if test="repair_name != null and repair_name != ''">repair_name,</if>
+            <if test="machinery_id != null and machinery_id != ''">machinery_id,</if>
+            <if test="machinery_code != null and machinery_code != ''">machinery_code,</if>
+            <if test="machinery_name != null and machinery_name != ''">machinery_name,</if>
+            <if test="machinery_brand != null and machinery_brand != ''">machinery_brand,</if>
+            <if test="machinery_spec != null and machinery_spec != ''">machinery_spec,</if>
+            <if test="machinery_type_id != null and machinery_type_id != ''">machinery_type_id,</if>
+            <if test="require_date != null and require_date != ''">require_date,</if>
+            <if test="finish_date != null and finish_date != ''">finish_date,</if>
+            <if test="confirm_date != null and confirm_date != ''">confirm_date,</if>
+            <if test="repair_result != null and repair_result != ''">repair_result,</if>
+            <if test="accepted_by != null and accepted_by != ''">accepted_by,</if>
+            <if test="confirm_by != null and confirm_by != ''">confirm_by,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteRepairByrepaircode" parameterType="String">
+        delete from dv_repair where repair_code = #{repair_code}
+    </delete>
+
+    <update id="updateRepair" parameterType="Repair">
+        update dv_repair
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="repair_code != null and repair_code != ''">repair_code,</if>
+            <if test="repair_name != null and repair_name != ''">repair_name,</if>
+            <if test="machinery_id != null and machinery_id != ''">machinery_id,</if>
+            <if test="machinery_code != null and machinery_code != ''">machinery_code,</if>
+            <if test="machinery_name != null and machinery_name != ''">machinery_name,</if>
+            <if test="machinery_brand != null and machinery_brand != ''">machinery_brand,</if>
+            <if test="machinery_spec != null and machinery_spec != ''">machinery_spec,</if>
+            <if test="machinery_type_id != null and machinery_type_id != ''">machinery_type_id,</if>
+            <if test="require_date != null and require_date != ''">require_date,</if>
+            <if test="finish_date != null and finish_date != ''">finish_date,</if>
+            <if test="confirm_date != null and confirm_date != ''">confirm_date,</if>
+            <if test="repair_result != null and repair_result != ''">repair_result,</if>
+            <if test="accepted_by != null and accepted_by != ''">accepted_by,</if>
+            <if test="confirm_by != null and confirm_by != ''">confirm_by,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
