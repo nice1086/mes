@@ -1,0 +1,13 @@
+package com.ktg.mes.pro.mapper;
+
+import com.ktg.mes.pro.domain.Workorder;
+
+public interface WorkorderMapper {
+    int insertWorkorder(Workorder workorder);
+
+    Workorder selectWorkorderByworkordercode(String workorder_code);
+
+    int updateWorkorder(Workorder workorder);
+
+    int deleteWorkorderByworkordercode(String workorder_code);
+}
