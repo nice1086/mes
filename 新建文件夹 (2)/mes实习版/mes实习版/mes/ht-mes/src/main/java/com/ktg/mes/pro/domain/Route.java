@@ -3,24 +3,24 @@ package com.ktg.mes.pro.domain;
 import com.ktg.common.annotation.Excel;
 
 import javax.validation.constraints.NotBlank;
-import java.math.BigInteger;
 import java.util.Date;
 
-public class Process {
-    /** 工序编码 */
-    @Excel(name = "工序编码")
-    @NotBlank(message = "工序编码不能为空")
-    private String process_code;
+public class Route {
 
-    /** 工序名称 */
-    @Excel(name = "工序名称")
-    @NotBlank(message = "工序名称不能为空")
-    private String process_name;
+    /** 工艺路线编号 */
+    @Excel(name = "工艺路线编号")
+    @NotBlank(message = "工艺路线编号不能为空")
+    private String route_code;
 
-    /** 工艺要求 */
-    @Excel(name = "工艺要求")
-    private String attention;
+    /** 工艺路线名称 */
+    @Excel(name = "工艺路线名称")
+    @NotBlank(message = "工艺路线名称不能为空")
+    private String route_name;
 
+    /** 工艺路线说明 */
+    @Excel(name = "工艺路线说明")
+    @NotBlank(message = "工艺路线说明不能为空")
+    private String route_desc;
 
     /** 是否启用 */
     @Excel(name = "是否启用")
@@ -68,10 +68,10 @@ public class Process {
 
     @Override
     public String toString() {
-        return "Process{" +
-                "process_code='" + process_code + '\'' +
-                ", process_name='" + process_name + '\'' +
-                ", attention='" + attention + '\'' +
+        return "Route{" +
+                "route_code='" + route_code + '\'' +
+                ", route_name='" + route_name + '\'' +
+                ", route_desc='" + route_desc + '\'' +
                 ", enable_flag='" + enable_flag + '\'' +
                 ", status='" + status + '\'' +
                 ", remark='" + remark + '\'' +
@@ -86,28 +86,28 @@ public class Process {
                 '}';
     }
 
-    public String getProcess_code() {
-        return process_code;
+    public String getRoute_code() {
+        return route_code;
     }
 
-    public void setProcess_code(String process_code) {
-        this.process_code = process_code;
+    public void setRoute_code(String route_code) {
+        this.route_code = route_code;
     }
 
-    public String getProcess_name() {
-        return process_name;
+    public String getRoute_name() {
+        return route_name;
     }
 
-    public void setProcess_name(String process_name) {
-        this.process_name = process_name;
+    public void setRoute_name(String route_name) {
+        this.route_name = route_name;
     }
 
-    public String getAttention() {
-        return attention;
+    public String getRoute_desc() {
+        return route_desc;
     }
 
-    public void setAttention(String attention) {
-        this.attention = attention;
+    public void setRoute_desc(String route_desc) {
+        this.route_desc = route_desc;
     }
 
     public String getEnable_flag() {

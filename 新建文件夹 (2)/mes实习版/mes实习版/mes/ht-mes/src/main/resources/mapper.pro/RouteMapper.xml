@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.pro.mapper.RouteMapper">
+    <select id="selectRouteByroutecode" parameterType="String" resultMap="Route">
+       select route_code,route_name,route_desc,enable_flag,remark,
+              attr1,attr2,attr3,attr4,create_by,create_time,update_by,
+              update_time
+       from pro_route where route_code = #{route_code}
+    </select>
+
+    <insert id="insertRoute" parameterType="Route">
+        insert into pro_route
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="route_code != null and route_code != ''">route_code,</if>
+            <if test="route_name != null and route_name != ''">route_name,</if>
+            <if test="route_desc != null and route_desc != ''">route_desc,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteRouteByroutecode" parameterType="String">
+        delete from pro_route where route_code = #{route_code}
+    </delete>
+
+    <update id="updateRoute" parameterType="Route">
+        update pro_route
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="route_code != null and route_code != ''">route_code,</if>
+            <if test="route_name != null and route_name != ''">route_name,</if>
+            <if test="route_desc != null and route_desc != ''">route_desc,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
