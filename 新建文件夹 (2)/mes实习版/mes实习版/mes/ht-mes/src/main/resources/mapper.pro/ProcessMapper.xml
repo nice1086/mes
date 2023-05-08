@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.pro.mapper.ProcessMapper">
+    <select id="selectProcessByprocesscode" parameterType="String" resultMap="Process">
+       select process_code,process_name,attention,enable_flag,remark,
+              attr1,attr2,attr3,attr4,create_by,create_time,update_by,
+              update_time
+       from pro_process where process_code = #{process_code}
+    </select>
+
+    <insert id="insertProcess" parameterType="Process">
+        insert into pro_process
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="process_code != null and process_code != ''">process_code,</if>
+            <if test="process_name != null and process_name != ''">process_name,</if>
+            <if test="attention != null and attention != ''">attention,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteProcessByprocesscode" parameterType="String">
+        delete from pro_process where process_code = #{process_code}
+    </delete>
+
+    <update id="updateProcess" parameterType="Process">
+        update pro_process
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="process_code != null and process_code != ''">process_code,</if>
+            <if test="process_name != null and process_name != ''">process_name,</if>
+            <if test="attention != null and attention != ''">attention,</if>
+            <if test="enable_flag != null and enable_flag != ''">enable_flag,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
