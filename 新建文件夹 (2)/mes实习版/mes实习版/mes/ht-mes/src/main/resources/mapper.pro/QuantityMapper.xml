@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.pro.mapper.QuantityMapper">
+    <select id="selectQuantityBytaskcode" parameterType="String" resultMap="Quantity">
+       select task_code,task_name,workorder_id,workorder_code,workorder_name,workstation_id,
+           workstation_code,workstation_name,process_id,process_code,process_name,item_id,
+           item_code,item_name,specification,unit_of_measure,quantity,quantity_produced,
+           quantity_quanlify,quantity_unquanlify,quantity_changed,client_id,client_code,
+           client_name,client_nick,start_time,duration,end_time,color_code,request_date,
+           status,remark,attr1,attr2,attr3,attr4,create_by,create_time,update_by,update_time
+       from pro_task where task_code = #{task_code}
+    </select>
+
+    <insert id="insertQuantity" parameterType="Quantity">
+        insert into pro_task
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="task_code != null and task_code != ''">task_code,</if>
+            <if test="task_name != null and task_name != ''">task_name,</if>
+            <if test="workorder_id != null and workorder_id != ''">workorder_id,</if>
+            <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
+            <if test="workorder_name != null and workorder_name != ''">workorder_name,</if>
+            <if test="workstation_id != null and workstation_id != ''">workstation_id,</if>
+            <if test="workstation_code != null and workstation_code != ''">workstation_code,</if>
+            <if test="workstation_name != null and workstation_name != ''">workstation_name,</if>
+            <if test="process_id != null and process_id != ''">process_id,</if>
+            <if test="process_code != null and process_code != ''">process_code,</if>
+            <if test="process_name != null and process_name != ''">process_name,</if>
+            <if test="item_id != null and item_id != ''">item_id,</if>
+            <if test="item_code != null and item_code != ''">item_code,</if>
+            <if test="item_name != null and item_name != ''">item_name,</if>
+            <if test="specification != null and specification != ''">specification,</if>
+            <if test="unit_of_measure != null and unit_of_measure != ''">unit_of_measure,</if>
+            <if test="quantity != null and quantity != ''">quantity,</if>
+            <if test="quantity_produced != null and quantity_produced != ''">quantity_produced,</if>
+            <if test="quantity_quanlify != null and quantity_quanlify != ''">quantity_quanlify,</if>
+            <if test="quantity_unquanlify != null and quantity_unquanlify != ''">quantity_unquanlify,</if>
+            <if test="quantity_changed != null and quantity_changed != ''">quantity_changed,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_code != null and client_code != ''">client_code,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="client_nick != null and client_nick != ''">client_nick,</if>
+            <if test="start_time != null and start_time != ''">start_time,</if>
+            <if test="duration != null and duration != ''">duration,</if>
+            <if test="end_time != null and end_time != ''">end_time,</if>
+            <if test="color_code != null and color_code != ''">color_code,</if>
+            <if test="request_date != null and request_date != ''">request_date,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteQuantityBytaskcode" parameterType="String">
+        delete from pro_task where task_code = #{task_code}
+    </delete>
+
+    <update id="updateQuantity" parameterType="Quantity">
+        update pro_task
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="task_code != null and task_code != ''">task_code,</if>
+            <if test="task_name != null and task_name != ''">task_name,</if>
+            <if test="workorder_id != null and workorder_id != ''">workorder_id,</if>
+            <if test="workorder_code != null and workorder_code != ''">workorder_code,</if>
+            <if test="workorder_name != null and workorder_name != ''">workorder_name,</if>
+            <if test="workstation_id != null and workstation_id != ''">workstation_id,</if>
+            <if test="workstation_code != null and workstation_code != ''">workstation_code,</if>
+            <if test="workstation_name != null and workstation_name != ''">workstation_name,</if>
+            <if test="process_id != null and process_id != ''">process_id,</if>
+            <if test="process_code != null and process_code != ''">process_code,</if>
+            <if test="process_name != null and process_name != ''">process_name,</if>
+            <if test="item_id != null and item_id != ''">item_id,</if>
+            <if test="item_code != null and item_code != ''">item_code,</if>
+            <if test="item_name != null and item_name != ''">item_name,</if>
+            <if test="specification != null and specification != ''">specification,</if>
+            <if test="unit_of_measure != null and unit_of_measure != ''">unit_of_measure,</if>
+            <if test="quantity != null and quantity != ''">quantity,</if>
+            <if test="quantity_produced != null and quantity_produced != ''">quantity_produced,</if>
+            <if test="quantity_quanlify != null and quantity_quanlify != ''">quantity_quanlify,</if>
+            <if test="quantity_unquanlify != null and quantity_unquanlify != ''">quantity_unquanlify,</if>
+            <if test="quantity_changed != null and quantity_changed != ''">quantity_changed,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_code != null and client_code != ''">client_code,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="client_nick != null and client_nick != ''">client_nick,</if>
+            <if test="start_time != null and start_time != ''">start_time,</if>
+            <if test="duration != null and duration != ''">duration,</if>
+            <if test="end_time != null and end_time != ''">end_time,</if>
+            <if test="color_code != null and color_code != ''">color_code,</if>
+            <if test="request_date != null and request_date != ''">request_date,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
