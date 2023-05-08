@@ -20,7 +20,7 @@ public class WorkorderController {
     /**
      * 新增
      */
-    @PreAuthorize("@ss.hasPermi('mes:dv:workorder:add')")
+    @PreAuthorize("@ss.hasPermi('mes:pro:workorder:add')")
     @Log(title = "工单编号", businessType = BusinessType.INSERT)
     @PostMapping
     public int add(@Validated @RequestBody Workorder workorder)
@@ -31,7 +31,7 @@ public class WorkorderController {
     /**
      * 查看
      */
-    @PreAuthorize("@ss.hasPermi('mes:dv:workorder:list')")
+    @PreAuthorize("@ss.hasPermi('mes:pro:workorder:list')")
     @GetMapping("/list")
     public Workorder select(@Validated @RequestParam String workorder_code)
     {
@@ -41,7 +41,7 @@ public class WorkorderController {
     /**
      * 修改
      */
-    @PreAuthorize("@ss.hasPermi('mes:dv:workorder:edit')")
+    @PreAuthorize("@ss.hasPermi('mes:pro:workorder:edit')")
     @Log(title = "工单编号", businessType = BusinessType.UPDATE)
     @PutMapping
     public int edit(@Validated @RequestBody Workorder workorder)
@@ -52,7 +52,7 @@ public class WorkorderController {
     /**
      * 删除
      */
-    @PreAuthorize("@ss.hasPermi('mes:dv:workorder:remove')")
+    @PreAuthorize("@ss.hasPermi('mes:pro:workorder:remove')")
     @Log(title = "工单编号", businessType = BusinessType.DELETE)
     @DeleteMapping("/{workorder_code}")
     public int remove(@PathVariable String workorder_code)
