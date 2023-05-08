@@ -19,30 +19,37 @@ public class Quantity {
 
     /** 生产工单ID */
     @Excel(name = "生产工单ID")
+    @NotBlank(message = "不能为空")
     private BigInteger workorder_id;
 
     /** 生产工单编号 */
     @Excel(name = "生产工单编号")
+    @NotBlank(message = "不能为空")
     private String workorder_code;
 
     /** 工单名称 */
     @Excel(name = "工单名称")
+    @NotBlank(message = "不能为空")
     private String workorder_name;
 
     /** 工作站ID */
     @Excel(name = "工作站ID")
+    @NotBlank(message = "不能为空")
     private BigInteger workstation_id;
 
     /** 工作站编号 */
     @Excel(name = "工作站编号")
+    @NotBlank(message = "不能为空")
     private String workstation_code;
 
     /** 工作站名称 */
     @Excel(name = "工作站名称")
+    @NotBlank(message = "不能为空")
     private String workstation_name;
 
     /** 工序ID */
     @Excel(name = "工序ID")
+    @NotBlank(message = "不能为空")
     private BigInteger process_id;
 
     /** 工序编码 */
@@ -55,14 +62,17 @@ public class Quantity {
 
     /** 产品物料ID */
     @Excel(name = "产品物料ID")
+    @NotBlank(message = "不能为空")
     private BigInteger item_id;
 
     /** 产品物料编码 */
     @Excel(name = "产品物料编码")
+    @NotBlank(message = "不能为空")
     private String item_code;
 
     /** 产品物料名称 */
     @Excel(name = "产品物料名称")
+    @NotBlank(message = "不能为空")
     private String item_name;
 
     /** 规格型号 */
@@ -71,10 +81,12 @@ public class Quantity {
 
     /** 单位 */
     @Excel(name = "单位")
+    @NotBlank(message = "不能为空")
     private String unit_of_measure;
 
     /** 排产数量 */
     @Excel(name = "排产数量")
+    @NotBlank(message = "不能为空")
     private Double quantity;
 
     /** 已生产数量 */
@@ -143,10 +155,12 @@ public class Quantity {
 
     /** 预留字段1 */
     @Excel(name = "预留字段1")
+    @NotBlank(message = "不能为空")
     private String attr1;
 
     /** 预留字段2 */
     @Excel(name = "预留字段2")
+    @NotBlank(message = "不能为空")
     private String attr2;
 
     /** 预留字段3 */
