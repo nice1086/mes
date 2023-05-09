@@ -253,7 +253,6 @@ create table qc_ipqc (
   ipqc_name                   varchar(255)                               comment '检验单名称',
   ipqc_type                   varchar(64)     not null                   comment '检验类型',
   template_id                 bigint(20)      not null                   comment '检验模板ID',
-  
   workorder_id                bigint(20)      not null                   comment '工单ID',
   workorder_code              varchar(64)                                comment '工单编码',
   workorder_name              varchar(255)                               comment '工单名称',
@@ -266,17 +265,14 @@ create table qc_ipqc (
   process_id                  bigint(20)                                 comment '工序ID',
   process_code                varchar(64)                                comment '工序编码',
   process_name                varchar(255)                               comment '工序名称',
-  
   item_id                     bigint(20)      not null                   comment '产品物料ID',
   item_code                   varchar(64)                                comment '产品物料编码',
   item_name                   varchar(255)                               comment '产品物料名称',
   specification               varchar(500)                               comment '规格型号',
   unit_of_measure             varchar(64)                                comment '单位',
-  
   quantity_check              double(12,4)    default 1                  comment '检测数量',
   quantity_unqualified        double(12,4)    default 0                  comment '不合格数',
   quantity_qualified          double(12,4)                               comment '合格品数量',
-
   cr_rate                     double(12,2)    default 0                  comment '致命缺陷率',
   maj_rate                    double(12,2)    default 0                  comment '严重缺陷率',
   min_rate                    double(12,2)    default 0                  comment '轻微缺陷率',
@@ -284,7 +280,6 @@ create table qc_ipqc (
   maj_quantity                double(12,4)    default 0                  comment '严重缺陷数量',
   min_quantity                double(12,4)    default 0                  comment '轻微缺陷数量',
   check_result                varchar(64)                                comment '检测结果',
-  
   inspect_date                datetime                                   comment '检测日期',
   inspector                   varchar(64)                                comment '检测人员',
   status                      varchar(64)                                comment '单据状态',
