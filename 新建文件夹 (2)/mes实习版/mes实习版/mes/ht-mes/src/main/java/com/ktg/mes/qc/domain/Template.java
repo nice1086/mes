@@ -3,27 +3,26 @@ package com.ktg.mes.qc.domain;
 import com.ktg.common.annotation.Excel;
 
 import javax.validation.constraints.NotBlank;
-import java.math.BigInteger;
 import java.util.Date;
 
-public class Defect {
-    /** 缺陷编码 */
-    @Excel(name = "缺陷编码")
-    @NotBlank(message = "缺陷编码不能为空")
-    private String defect_code;
+public class Template {
+    /** 检测模板编号 */
+    @Excel(name = "检测模板编号")
+    @NotBlank(message = "检测模板编号不能为空")
+    private String template_code;
 
-    /** 缺陷描述 */
-    @Excel(name = "缺陷描述")
-    @NotBlank(message = "缺陷描述不能为空")
-    private String defect_name;
+    /** 检测模板名称 */
+    @Excel(name = "检测模板名称")
+    @NotBlank(message = "检测模板名称不能为空")
+    private String template_name;
 
-    /** 检测项类型 */
-    @Excel(name = "检测项类型")
-    private String index_type;
+    /** 检测种类 */
+    @Excel(name = "检测种类")
+    private String qc_types;
 
-    /** 缺陷等级 */
-    @Excel(name = "缺陷等级")
-    private String defect_level;
+    /** 是否启用 */
+    @Excel(name = "是否启用")
+    private String enable_flag;
 
     /** 备注 */
     @Excel(name = "备注")
@@ -63,11 +62,11 @@ public class Defect {
 
     @Override
     public String toString() {
-        return "Defect{" +
-                "defect_code='" + defect_code + '\'' +
-                ", defect_name='" + defect_name + '\'' +
-                ", index_type='" + index_type + '\'' +
-                ", defect_level='" + defect_level + '\'' +
+        return "Template{" +
+                "template_code='" + template_code + '\'' +
+                ", template_name='" + template_name + '\'' +
+                ", qc_types='" + qc_types + '\'' +
+                ", enable_flag='" + enable_flag + '\'' +
                 ", remark='" + remark + '\'' +
                 ", attr1='" + attr1 + '\'' +
                 ", attr2='" + attr2 + '\'' +
@@ -80,36 +79,36 @@ public class Defect {
                 '}';
     }
 
-    public String getDefect_code() {
-        return defect_code;
+    public String getTemplate_code() {
+        return template_code;
     }
 
-    public void setDefect_code(String defect_code) {
-        this.defect_code = defect_code;
+    public void setTemplate_code(String template_code) {
+        this.template_code = template_code;
     }
 
-    public String getDefect_name() {
-        return defect_name;
+    public String getTemplate_name() {
+        return template_name;
     }
 
-    public void setDefect_name(String defect_name) {
-        this.defect_name = defect_name;
+    public void setTemplate_name(String template_name) {
+        this.template_name = template_name;
     }
 
-    public String getIndex_type() {
-        return index_type;
+    public String getQc_types() {
+        return qc_types;
     }
 
-    public void setIndex_type(String index_type) {
-        this.index_type = index_type;
+    public void setQc_types(String qc_types) {
+        this.qc_types = qc_types;
     }
 
-    public String getDefect_level() {
-        return defect_level;
+    public String getEnable_flag() {
+        return enable_flag;
     }
 
-    public void setDefect_level(String defect_level) {
-        this.defect_level = defect_level;
+    public void setEnable_flag(String enable_flag) {
+        this.enable_flag = enable_flag;
     }
 
     public String getRemark() {
