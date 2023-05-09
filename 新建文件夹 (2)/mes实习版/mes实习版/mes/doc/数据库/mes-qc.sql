@@ -347,7 +347,6 @@ create table qc_oqc (
   item_name                   varchar(255)                               comment '产品物料名称',
   specification               varchar(500)                               comment '规格型号',
   unit_of_measure             varchar(64)                                comment '单位',
-  
   quantity_min_check          double(12,4)    default 1                  comment '最低检测数',
   quantity_max_unqualified    double(12,4)    default 0                  comment '最大不合格数',
   quantity_out                double(12,4)    not null                   comment '发货数量',
@@ -361,7 +360,6 @@ create table qc_oqc (
   maj_quantity                double(12,4)    default 0                  comment '严重缺陷数量',
   min_quantity                double(12,4)    default 0                  comment '轻微缺陷数量',
   check_result                varchar(64)                                comment '检测结果',
-  
   out_date                    datetime                                   comment '出货日期',
   inspect_date                datetime                                   comment '检测日期',
   inspector                   varchar(64)                                comment '检测人员',

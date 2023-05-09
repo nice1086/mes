@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.qc.mapper.OqcMapper">
+    <select id="selectOqcByoqccode" parameterType="String" resultMap="Oqc">
+       select oqc_code,oqc_name,template_id,client_id,client_code,client_name,
+              batch_code,item_id,item_code,item_name,specification,unit_of_measure,
+              quantity_min_check,quantity_max_unqualified,quantity_out,quantity_check,
+              quantity_unqualified,quantity_quanlified,cr_rate,maj_rate,min_rate,
+              cr_quantity,maj_quantity,min_quantity,check_result,out_date,
+              inspect_date,inspector,status,remark,attr1,attr2,attr3,attr4,
+              create_by,create_time,update_by,update_time
+       from qc_oqc where oqc_code = #{oqc_code}
+    </select>
+
+    <insert id="insertOqc" parameterType="Oqc">
+        insert into qc_oqc
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="oqc_code != null and oqc_code != ''">oqc_code,</if>
+            <if test="oqc_name != null and oqc_name != ''">oqc_name,</if>
+            <if test="template_id != null and template_id != ''">template_id,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_code != null and client_code != ''">client_code,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="batch_code != null and batch_code != ''">batch_code,</if>
+            <if test="item_id != null and item_id != ''">item_id,</if>
+            <if test="item_code != null and item_code != ''">item_code,</if>
+            <if test="item_name != null and item_name != ''">item_name,</if>
+            <if test="specification != null and specification != ''">specification,</if>
+            <if test="unit_of_measure != null and unit_of_measure != ''">unit_of_measure,</if>
+            <if test="quantity_min_check != null and quantity_min_check != ''">quantity_min_check,</if>
+            <if test="quantity_max_unqualified != null and quantity_max_unqualified != ''">quantity_max_unqualified,</if>
+            <if test="quantity_out != null and quantity_out != ''">quantity_out,</if>
+            <if test="quantity_check != null and quantity_check != ''">quantity_check,</if>
+            <if test="quantity_unqualified != null and quantity_unqualified != ''">quantity_unqualified,</if>
+            <if test="quantity_quanlified != null and quantity_quanlified != ''">quantity_quanlified,</if>
+            <if test="cr_rate != null and cr_rate != ''">cr_rate,</if>
+            <if test="maj_rate != null and maj_rate != ''">maj_rate,</if>
+            <if test="min_rate != null and min_rate != ''">min_rate,</if>
+            <if test="cr_quantity != null and cr_quantity != ''">cr_quantity,</if>
+            <if test="maj_quantity != null and maj_quantity != ''">maj_quantity,</if>
+            <if test="min_quantity != null and min_quantity != ''">min_quantity,</if>
+            <if test="check_result != null and check_result != ''">check_result,</if>
+            <if test="out_date != null and out_date != ''">out_date,</if>
+            <if test="inspect_date != null and inspect_date != ''">inspect_date,</if>
+            <if test="inspector != null and inspector != ''">inspector,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteOqcByoqccode" parameterType="String">
+        delete from qc_oqc where oqc_code = #{oqc_code}
+    </delete>
+
+    <update id="updateOqc" parameterType="Oqc">
+        update qc_oqc
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="oqc_code != null and oqc_code != ''">oqc_code,</if>
+            <if test="oqc_name != null and oqc_name != ''">oqc_name,</if>
+            <if test="template_id != null and template_id != ''">template_id,</if>
+            <if test="client_id != null and client_id != ''">client_id,</if>
+            <if test="client_code != null and client_code != ''">client_code,</if>
+            <if test="client_name != null and client_name != ''">client_name,</if>
+            <if test="batch_code != null and batch_code != ''">batch_code,</if>
+            <if test="item_id != null and item_id != ''">item_id,</if>
+            <if test="item_code != null and item_code != ''">item_code,</if>
+            <if test="item_name != null and item_name != ''">item_name,</if>
+            <if test="specification != null and specification != ''">specification,</if>
+            <if test="unit_of_measure != null and unit_of_measure != ''">unit_of_measure,</if>
+            <if test="quantity_min_check != null and quantity_min_check != ''">quantity_min_check,</if>
+            <if test="quantity_max_unqualified != null and quantity_max_unqualified != ''">quantity_max_unqualified,</if>
+            <if test="quantity_out != null and quantity_out != ''">quantity_out,</if>
+            <if test="quantity_check != null and quantity_check != ''">quantity_check,</if>
+            <if test="quantity_unqualified != null and quantity_unqualified != ''">quantity_unqualified,</if>
+            <if test="quantity_quanlified != null and quantity_quanlified != ''">quantity_quanlified,</if>
+            <if test="cr_rate != null and cr_rate != ''">cr_rate,</if>
+            <if test="maj_rate != null and maj_rate != ''">maj_rate,</if>
+            <if test="min_rate != null and min_rate != ''">min_rate,</if>
+            <if test="cr_quantity != null and cr_quantity != ''">cr_quantity,</if>
+            <if test="maj_quantity != null and maj_quantity != ''">maj_quantity,</if>
+            <if test="min_quantity != null and min_quantity != ''">min_quantity,</if>
+            <if test="check_result != null and check_result != ''">check_result,</if>
+            <if test="out_date != null and out_date != ''">out_date,</if>
+            <if test="inspect_date != null and inspect_date != ''">inspect_date,</if>
+            <if test="inspector != null and inspector != ''">inspector,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
