@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktg.mes.qc.mapper.DefectMapper">
+    <select id="selectDefectBydefectcode" parameterType="String" resultMap="Defect">
+       select defect_code,defect_name,index_type,defect_level,remark,
+              attr1,attr2,attr3,attr4,create_by,create_time,update_by,update_time
+       from qc_defect where warehouse_code = #{warehouse_code}
+    </select>
+
+    <insert id="insertDefect" parameterType="Defect">
+        insert into qc_defect
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="defect_code != null and defect_code != ''">defect_code,</if>
+            <if test="defect_name != null and defect_name != ''">defect_name,</if>
+            <if test="index_type != null and index_type != ''">index_type,</if>
+            <if test="defect_level != null and defect_level != ''">defect_level,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteDefectBydefectcode" parameterType="String">
+        delete from qc_defect where defect_code = #{defect_code}
+    </delete>
+
+    <update id="updateDefect" parameterType="Defect">
+        update qc_defect
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="defect_code != null and defect_code != ''">defect_code,</if>
+            <if test="defect_name != null and defect_name != ''">defect_name,</if>
+            <if test="index_type != null and index_type != ''">index_type,</if>
+            <if test="defect_level != null and defect_level != ''">defect_level,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="attr1 != null and attr1 != ''">attr1,</if>
+            <if test="attr2 != null and attr2 != ''">attr2,</if>
+            <if test="attr3 != null and attr3 != ''">attr3,</if>
+            <if test="attr4 != null and attr4 != ''">attr4,</if>
+            <if test="create_by != null and create_by != ''">create_by,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_by != null and update_by != ''">update_by,</if>
+            <if test="update_time != null and update_time != ''">update_times,</if>
+        </trim>
+    </update>
+</mapper>
