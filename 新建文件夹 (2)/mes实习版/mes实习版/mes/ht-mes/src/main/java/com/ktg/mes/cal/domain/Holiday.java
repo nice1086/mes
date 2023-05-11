@@ -5,20 +5,16 @@ import com.ktg.common.annotation.Excel;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-public class Plan {
-    /** 计划编号 */
-    @Excel(name = "计划编号")
-    @NotBlank(message = "计划编号不能为空")
-    private String plan_code;
+public class Holiday {
+    /** 日期 */
+    @Excel(name = "日期")
+    @NotBlank(message = "日期不能为空")
+    private Date the_day;
 
-    /** 计划名称 */
-    @Excel(name = "计划名称")
-    @NotBlank(message = "计划名称不能为空")
-    private String plan_name;
-
-    /** 班组类型 */
-    @Excel(name = "班组类型")
-    private String calendar_type;
+    /** 日期类型 */
+    @Excel(name = "日期类型")
+    @NotBlank(message = "日期类型不能为空")
+    private String holiday_type;
 
     /** 开始日期 */
     @Excel(name = "开始日期")
@@ -27,22 +23,6 @@ public class Plan {
     /** 结束日期 */
     @Excel(name = "结束日期")
     private Date end_date;
-
-    /** 轮班方式 */
-    @Excel(name = "轮班方式")
-    private String shift_type;
-
-    /** 倒班方式 */
-    @Excel(name = "倒班方式")
-    private String shift_method;
-
-    /** 数 */
-    @Excel(name = "数")
-    private String shift_count;
-
-    /** 状态 */
-    @Excel(name = "状态")
-    private String status;
 
     /** 备注 */
     @Excel(name = "备注")
@@ -82,16 +62,11 @@ public class Plan {
 
     @Override
     public String toString() {
-        return "Plan{" +
-                "plan_code='" + plan_code + '\'' +
-                ", plan_name='" + plan_name + '\'' +
-                ", calendar_type='" + calendar_type + '\'' +
+        return "Holiday{" +
+                "the_day=" + the_day +
+                ", holiday_type='" + holiday_type + '\'' +
                 ", start_date=" + start_date +
                 ", end_date=" + end_date +
-                ", shift_type='" + shift_type + '\'' +
-                ", shift_method='" + shift_method + '\'' +
-                ", shift_count='" + shift_count + '\'' +
-                ", status='" + status + '\'' +
                 ", remark='" + remark + '\'' +
                 ", attr1='" + attr1 + '\'' +
                 ", attr2='" + attr2 + '\'' +
@@ -104,28 +79,20 @@ public class Plan {
                 '}';
     }
 
-    public String getPlan_code() {
-        return plan_code;
+    public Date getThe_day() {
+        return the_day;
     }
 
-    public void setPlan_code(String plan_code) {
-        this.plan_code = plan_code;
+    public void setThe_day(Date the_day) {
+        this.the_day = the_day;
     }
 
-    public String getPlan_name() {
-        return plan_name;
+    public String getHoliday_type() {
+        return holiday_type;
     }
 
-    public void setPlan_name(String plan_name) {
-        this.plan_name = plan_name;
-    }
-
-    public String getCalendar_type() {
-        return calendar_type;
-    }
-
-    public void setCalendar_type(String calendar_type) {
-        this.calendar_type = calendar_type;
+    public void setHoliday_type(String holiday_type) {
+        this.holiday_type = holiday_type;
     }
 
     public Date getStart_date() {
@@ -142,38 +109,6 @@ public class Plan {
 
     public void setEnd_date(Date end_date) {
         this.end_date = end_date;
-    }
-
-    public String getShift_type() {
-        return shift_type;
-    }
-
-    public void setShift_type(String shift_type) {
-        this.shift_type = shift_type;
-    }
-
-    public String getShift_method() {
-        return shift_method;
-    }
-
-    public void setShift_method(String shift_method) {
-        this.shift_method = shift_method;
-    }
-
-    public String getShift_count() {
-        return shift_count;
-    }
-
-    public void setShift_count(String shift_count) {
-        this.shift_count = shift_count;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getRemark() {
